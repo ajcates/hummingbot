@@ -27,21 +27,21 @@ RUN :> ~/.bashrc
 
 # Install nvm and CeloCLI; note: nvm adds own section to ~/.bashrc
 SHELL [ "/bin/bash", "-lc" ]
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash && \
-    export NVM_DIR="/home/hummingbot/.nvm" && \
-    source "/home/hummingbot/.nvm/nvm.sh" && \
-    nvm install 10 && \
-    npm install --only=production -g @celo/celocli@0.0.48 && \
-    nvm cache clear && \
-    npm cache clean --force && \
-    rm -rf /home/hummingbot/.cache
+#RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash && \
+#    export NVM_DIR="/home/hummingbot/.nvm" && \
+#    source "/home/hummingbot/.nvm/nvm.sh" && \
+#    nvm install --lts && \
+#    npm install -g @celo/celocli && \
+#    nvm cache clear && \
+#    npm cache clean --force && \
+RUN rm -rf /home/hummingbot/.cache
 
 # Copy environment only to optimize build caching, so changes in sources will not cause conda env invalidation
 COPY --chown=hummingbot:hummingbot setup/environment-linux.yml setup/
 
 # ./install | create hummingbot environment
-RUN ~/miniconda3/bin/conda env create -f setup/environment-linux.yml && \
-    ~/miniconda3/bin/conda clean -tipsy && \
+RUN ~/miniconda3/bin/conda env create -f setup/environment-linux.yml 
+RUN ~/miniconda3/bin/conda clean -tipsy && \
     # clear pip cache
     rm -rf /home/hummingbot/.cache
 
