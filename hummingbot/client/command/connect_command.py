@@ -8,6 +8,7 @@ from hummingbot.market.celo.celo_cli import CeloCLI
 from hummingbot.connector.connector_status import get_connector_status
 import pandas as pd
 from typing import TYPE_CHECKING, Optional
+
 if TYPE_CHECKING:
     from hummingbot.client.hummingbot_application import HummingbotApplication
 

@@ -75,6 +75,7 @@ bitmax_secret_key: null
 celo_address: null
 celo_password: null
 
+<<<<<<< HEAD
 terra_wallet_address: null
 terra_wallet_seeds: null
 
@@ -85,6 +86,11 @@ probit_secret_key: null
 
 probit_kr_api_key: null
 probit_kr_secret_key: null
+=======
+vitex_vite_address: null
+vitex_api_key: null
+vitex_secret_key: null
+>>>>>>> ef7fb00b07e6fa5c5e03686bc8ea6d91ef03a74b
 
 # Ethereum wallet address: required for trading on a DEX
 ethereum_wallet: null
